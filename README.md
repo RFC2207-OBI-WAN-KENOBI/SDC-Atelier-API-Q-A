@@ -1,4 +1,4 @@
-# SEGA-Project-Atelier
+# OBI-WAN-SDC-Atelier-API
 ## Project Setup using: https://github.com/DaltonHart/HowTo-React-Webpack-Babel
 
 
