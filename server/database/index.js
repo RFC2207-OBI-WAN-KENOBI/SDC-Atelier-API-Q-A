@@ -1,7 +1,7 @@
 const Promise = require('bluebird');
 const {Client, Pool} = require('pg');
 
-const client = new Client({
+const pool = new Pool({
   host: 'localhost',
   user: 'postgres',
   password:'1602',
@@ -9,12 +9,26 @@ const client = new Client({
   database:'QA'
 });
 
-client.connect();
-client.query('SELECT 100 from questions', (err, res) => {
-  if(err) {
-    console.log(err.message);
-  } else {
-    console.log(res.rows)
+pool.connect();
+module.exports = {
+  query: (text, params, callback) => {
+    const start = Date.now();
+    return pool.query(text, params, (err, res) => {
+      console.log('executed query', {text, duration, rows: res.rowCount});
+      callback(err, res);
+    })
+  },
+  getClient : (callback) => {
+    pool.connect((err, client, done) => {
+      callback(err, client, done)
+    })
   }
-  client.end
-});
+}
+// client.query('SELECT * FROM questions WHERE id = 1', (err, res) => {
+//   if(err) {
+//     console.log(err.stack);
+//   } else {
+//     console.log(res.rows[0]);
+//   }
+//   client.end();
+// });
