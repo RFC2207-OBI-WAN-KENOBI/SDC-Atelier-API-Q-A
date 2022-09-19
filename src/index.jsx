@@ -21,6 +21,27 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    axios.get('/qa/questions', {
+      headers: {'Authorization': `${API_KEY}`},
+      params: {
+        count: 5,
+        page: 0,
+        product_id: 7
+      }})
+      .then((res) => {console.log(res)})
+      .catch((err) => console.log(err));
+
+      axios.get('/qa/questions/:question_id/answers', {
+        headers: {'Authorization': `${API_KEY}`},
+        params: {
+          count: 5,
+          page: 0,
+          question_id: 7
+        }})
+        .then((res) => {console.log(res)})
+        .catch((err) => console.log(err));
+
+
     axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfc/products/', {
       headers: {'Authorization': `${API_KEY}`},
       params: {

@@ -1,4 +1,4 @@
-var db = require('./database/index.js');
+var db = require('./db/index.js');
 require('dotenv').config();
 var express = require('express');
 var app = express();
@@ -13,9 +13,9 @@ app.use(express.json());
 
 var router = require('./routes.js');
 app.use(express.static('./public'));
-app.use('/qa', router);
+app.use(router);
 
-const PORT = process.env.PORT;
+const PORT = 8080;
 app.listen(PORT);
 console.log(`Server listening at port http://localhost:${PORT}`);
 

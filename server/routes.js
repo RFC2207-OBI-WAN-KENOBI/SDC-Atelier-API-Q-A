@@ -3,15 +3,13 @@ var router = require('express').Router();
 
 
 
-router.get('questions', controller.qa.get);
+router.get('/qa/questions', controller.qa.getQues);
+
+router.get('/qa/questions/:question_id/answers', controller.qa.getAns);
 
 
-// app.get('/qa/questions', (req, res, next) => {
-//   db.query('SELECT * FROM questions WHERE id = 4', params, (err, result) => {
-//     if(err){
-//       return next(err)
-//     }
-//     res.send(result.rows[0])
-//   })
-// })
 
+
+
+
+module.exports = router;
