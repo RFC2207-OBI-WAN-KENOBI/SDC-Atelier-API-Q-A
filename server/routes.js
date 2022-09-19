@@ -1,14 +1,17 @@
-const db = require('./databse/index.js');
-const express = require('express');
-const app = express();
+var controller = require('./controllers');
+var router = require('express').Router();
 
 
-app.get('/qa/questions', (req, res, next) => {
-  db.query('SELECT * FROM questions WHERE id = 4', [req.params.id], (err, result) => {
-    if(err){
-      return next(err)
-    }
-    res.send(result.rows[0])
-  })
-})
+
+router.get('questions', controller.qa.get);
+
+
+// app.get('/qa/questions', (req, res, next) => {
+//   db.query('SELECT * FROM questions WHERE id = 4', params, (err, result) => {
+//     if(err){
+//       return next(err)
+//     }
+//     res.send(result.rows[0])
+//   })
+// })
 
