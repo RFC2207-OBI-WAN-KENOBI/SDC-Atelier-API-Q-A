@@ -717,7 +717,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"API_KEY\": () => (/* binding */ API_KEY)\n/* harmony export */ });\nvar API_KEY = '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';\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29uZmlnL2NvbmZpZy5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7O0FBQUEiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zZWdhLXByb2plY3QtYXRlbGllci8uL3NyYy9jb25maWcvY29uZmlnLmpzP2EwNzgiXSwic291cmNlc0NvbnRlbnQiOlsidmFyIEFQSV9LRVkgPSAnZ2hwXzlVRmNmVXhsMm04Z3JjYlk5YnZwYTNzWUdBcndOcjNzVGhCdyc7XG5cbmV4cG9ydCB7IEFQSV9LRVkgfTsiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/config/config.js\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"API_KEY\": () => (/* binding */ API_KEY)\n/* harmony export */ });\nvar API_KEY = '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';\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29uZmlnL2NvbmZpZy5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7O0FBQUEiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zZWdhLXByb2plY3QtYXRlbGllci8uL3NyYy9jb25maWcvY29uZmlnLmpzP2EwNzgiXSwic291cmNlc0NvbnRlbnQiOlsidmFyIEFQSV9LRVkgPSAnZ2hwX3l5MUxmZzZhZjE0d1NhUDIxMHFpTGJKUmVZdzJMRDFNSVlNbic7XG5cbmV4cG9ydCB7IEFQSV9LRVkgfTsiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/config/config.js\n");
 
 /***/ }),
 
