@@ -21,25 +21,45 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    var tempID = Math.floor(Math.random() * (10000 - 1) + 1);
     axios.get('/qa/questions', {
       headers: {'Authorization': `${API_KEY}`},
       params: {
         count: 5,
         page: 0,
-        product_id: 7
+        product_id: tempID
       }})
       .then((res) => {console.log(res)})
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
 
-      axios.get('/qa/questions/:question_id/answers', {
+      axios.get('/qa/answers', {
         headers: {'Authorization': `${API_KEY}`},
         params: {
           count: 5,
           page: 0,
-          question_id: 7
+          question_id: tempID
         }})
         .then((res) => {console.log(res)})
         .catch((err) => console.log(err));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfc/products/', {
