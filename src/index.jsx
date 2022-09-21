@@ -18,7 +18,7 @@ class App extends React.Component {
       params: {
         count: 5,
         page: 0,
-        product_id: tempID
+        product_id: 8319
       }})
       .then((res) => {console.log(res)})
       .catch((err) => console.log(err))
@@ -28,10 +28,24 @@ class App extends React.Component {
         params: {
           count: 5,
           page: 0,
-          question_id: tempID
+          question_id: 29180
         }})
         .then((res) => {console.log(res)})
         .catch((err) => console.log(err));
+
+
+      axios.post('/qa/questions', {
+        headers: {'Authorization': `${API_KEY}`},
+        params: {
+          body: 'This is a test?',
+          name: 'Testing12',
+          email: 'Testing@email.com',
+          product_id: 1
+        }})
+        .then((res) => {console.log(res)})
+        .catch((err) => console.log(err));
+
+
       }
 
 

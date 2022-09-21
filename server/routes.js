@@ -7,6 +7,8 @@ router.get('/qa/questions', controller.qa.getQues);
 
 router.get('/qa/answers', controller.qa.getAns);
 
+router.post('/qa/questions', controller.qa.addQues);
+
 
 
 
