@@ -3,4 +3,3 @@ FECkeypair.pem
 coverage/
 SEGAkeypair.pem
 public/bundle.js
-.env
