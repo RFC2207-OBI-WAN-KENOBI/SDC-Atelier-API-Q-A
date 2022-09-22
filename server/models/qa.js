@@ -84,51 +84,51 @@ module.exports = {
   addAns: function(params) {
     var date = new Date().getTime();
     const query = {
-      text: '',
-      values: []
+      text: 'INSERT INTO answers (question_id, answerer_name, answerer_email, helpful, answer_body, answer_reported, date_written) VALUES ($1, $2, $3, $4, $5, $6, $7)',
+      values: [params[3], params[1], params[2], 0, params[0], false, date]
     }
     return db.query(query)
-      .then((result) => {return result.rows})
+      .then((result) => {console.log('Post was completed')})
       .catch((err) => {console.log(err)})
   },
 
   qHelp: function(params) {
     const query = {
-      text: '',
-      values: []
+      text: 'UPDATE questions SET question_helpful = question_helpful + 1 WHERE question_id = $1',
+      values: [params[0]]
     }
     return db.query(query)
-      .then((result) => {return result.rows})
-      .catch((err) => {console.log(err)})
-  },
-
-  aHelp: function(params) {
-    const query = {
-      text: '',
-      values: []
-    }
-    return db.query(query)
-      .then((result) => {return result.rows})
+      .then((result) => {console.log('Question Help added')})
       .catch((err) => {console.log(err)})
   },
 
   qReport: function(params) {
     const query = {
-      text: '',
-      values: []
+      text: 'UPDATE questions SET reported = true WHERE question_id = $1',
+      values: [params[0]]
     }
     return db.query(query)
-      .then((result) => {return result.rows})
+      .then((result) => {console.log('Question Report changed')})
+      .catch((err) => {console.log(err)})
+  },
+
+  aHelp: function(params) {
+    const query = {
+      text: 'UPDATE answers SET helpful = helpful + 1 WHERE answer_id = $1',
+      values: [params[0]]
+    }
+    return db.query(query)
+      .then((result) => {console.log('Answer Help added')})
       .catch((err) => {console.log(err)})
   },
 
   aReport: function(params) {
     const query = {
-      text: '',
-      values: []
+      text: 'UPDATE answers SET answer_reported = true WHERE answer_id = $1',
+      values: [params[0]]
     }
     return db.query(query)
-      .then((result) => {return result.rows})
+      .then((result) => {console.log('Answer Report changed')})
       .catch((err) => {console.log(err)})
-  },
+  }
 };

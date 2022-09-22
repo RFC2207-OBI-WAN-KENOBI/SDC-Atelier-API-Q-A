@@ -12,13 +12,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    var tempID = Math.floor(Math.random() * (10000 - 1) + 1);
+    var tempID = Math.floor(Math.random() * (1000000 - 1) + 1);
     axios.get('/qa/questions', {
       headers: {'Authorization': `${API_KEY}`},
       params: {
         count: 5,
         page: 0,
-        product_id: 8319
+        product_id: tempID
       }})
       .then((res) => {console.log(res)})
       .catch((err) => console.log(err))
@@ -28,11 +28,10 @@ class App extends React.Component {
         params: {
           count: 5,
           page: 0,
-          question_id: 29180
+          question_id: tempID
         }})
         .then((res) => {console.log(res)})
         .catch((err) => console.log(err));
-
 
       axios.post('/qa/questions', {
         headers: {'Authorization': `${API_KEY}`},
@@ -40,11 +39,53 @@ class App extends React.Component {
           body: 'This is a test?',
           name: 'Testing12',
           email: 'Testing@email.com',
-          product_id: 1
+          product_id: tempID
         }})
         .then((res) => {console.log(res)})
         .catch((err) => console.log(err));
 
+      axios.post('/qa/answers', {
+        headers: {'Authorization': `${API_KEY}`},
+        params: {
+          body: 'this test is a lie',
+          name: 'Testing12',
+          email: 'Testing@email.com',
+          question_id: tempID
+        }})
+        .then((res) => {console.log(res)})
+        .catch((err) => console.log(err));
+
+      axios.put('/qa/questions/helpful', {
+        headers: {'Authorization': `${API_KEY}`},
+        params: {
+          question_id: tempID
+        }})
+        .then((res) => {console.log(res)})
+        .catch((err) => console.log(err));
+
+      axios.put('/qa/questions/report', {
+        headers: {'Authorization': `${API_KEY}`},
+        params: {
+          question_id: tempID
+        }})
+        .then((res) => {console.log(res)})
+        .catch((err) => console.log(err));
+
+      axios.put('/qa/answers/helpful', {
+        headers: {'Authorization': `${API_KEY}`},
+        params: {
+          answer_id: tempID
+        }})
+        .then((res) => {console.log(res)})
+        .catch((err) => console.log(err));
+
+      axios.put('/qa/answers/report', {
+        headers: {'Authorization': `${API_KEY}`},
+        params: {
+          answer_id: tempID
+        }})
+        .then((res) => {console.log(res)})
+        .catch((err) => console.log(err));
 
       }
 
