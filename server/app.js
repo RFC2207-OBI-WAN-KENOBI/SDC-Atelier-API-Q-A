@@ -15,9 +15,9 @@ var router = require('./routes.js');
 app.use(express.static('./public'));
 app.use(router);
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT);
-console.log(`Server listening at port http://localhost:${PORT}`);
+console.log(`Server listening at port http://${process.env.HOST}:${PORT}`);
 
 
 module.exports.app = app;
