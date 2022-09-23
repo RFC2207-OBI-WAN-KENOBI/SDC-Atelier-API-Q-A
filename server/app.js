@@ -3,6 +3,7 @@ require('dotenv').config();
 var express = require('express');
 var app = express();
 
+
 //middleware
 var morgan = require('morgan');
 var cors = require('cors');
@@ -18,6 +19,10 @@ app.use(router);
 const PORT = process.env.PORT || 8080;
 app.listen(PORT);
 console.log(`Server listening at port http://${process.env.HOST}:${PORT}`);
+
+process.on('unhandledRejection', (r, p) => {
+  console.log('Unhandled Rejection at:', p, 'reason:', r);
+});
 
 
 module.exports.app = app;
