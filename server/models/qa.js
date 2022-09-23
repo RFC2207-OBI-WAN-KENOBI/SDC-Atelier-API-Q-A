@@ -11,7 +11,6 @@ module.exports = {
       let res = result.rows;
       let resultArr = [];
       let resultObj = {};
-      console.log(res);
       for(var row of res) {
         if(resultObj[row.question_id]) {
           let ans = row.answer_id ? {} : null;
