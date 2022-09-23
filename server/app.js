@@ -24,6 +24,9 @@ process.on('unhandledRejection', (r, p) => {
   console.log('Unhandled Rejection at:', p, 'reason:', r);
   p.catch((err) => console.log(err));
 });
+process.on('uncaughtException', function (err) {
+  console.log(err);
+});
 
 
 module.exports.app = app;
