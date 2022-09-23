@@ -20,7 +20,7 @@ class App extends React.Component {
         page: 0,
         product_id: tempID
       }})
-      .then((res) => {console.log(res)})
+      .then((res) => {})
       .catch((err) => console.log(err))
 
       axios.get('/qa/answers', {
@@ -30,7 +30,7 @@ class App extends React.Component {
           page: 0,
           question_id: tempID
         }})
-        .then((res) => {console.log(res)})
+        .then((res) => {})
         .catch((err) => console.log(err));
 
       // axios.post('/qa/questions', {
